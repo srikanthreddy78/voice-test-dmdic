@@ -1,0 +1,115 @@
+{
+ "version": 1,
+ "prefix_len": 4,
+ "whatsapp": "",
+ "cells": [
+  {
+   "id": "narrator_sad",
+   "char": "narrator",
+   "char_label": "The Narrator",
+   "emo": "sad",
+   "text": "He never came home last night. I keep looking at the door, waiting for it to open, and it never does. I don't think he's coming back this time.",
+   "clips": [
+    "ceca98ae",
+    "465ab104",
+    "c65b0e88"
+   ]
+  },
+  {
+   "id": "narrator_happy",
+   "char": "narrator",
+   "char_label": "The Narrator",
+   "emo": "happy",
+   "text": "The letter came on a Tuesday, of all days. I read it twice standing in the doorway, then once more sitting down, because my knees had stopped being reliable. Good news still does that to me.",
+   "clips": [
+    "1e35ea6d",
+    "816d7566",
+    "fe1c9f6c"
+   ]
+  },
+  {
+   "id": "narrator_angry",
+   "char": "narrator",
+   "char_label": "The Narrator",
+   "emo": "angry",
+   "text": "They had every chance to tell the truth, and they chose the lie, every single time. I am done making excuses for them. Whatever happens next, they brought it on themselves.",
+   "clips": [
+    "0b156cc2",
+    "3a8f43a1",
+    "76fbdb1e"
+   ]
+  },
+  {
+   "id": "armitage_angry",
+   "char": "armitage",
+   "char_label": "Armitage",
+   "emo": "angry",
+   "text": "You knew. You knew the whole time, and you let me stand there like a fool. Don't you dare tell me it was for my own good.",
+   "clips": [
+    "3826f398",
+    "66a77427",
+    "2dfd2c42"
+   ]
+  },
+  {
+   "id": "armitage_sad",
+   "char": "armitage",
+   "char_label": "Armitage",
+   "emo": "sad",
+   "text": "I used to think there would be time to make it right. There isn't. There never was. I just kept telling myself a story so I could sleep.",
+   "clips": [
+    "61f92a8a",
+    "ae040221",
+    "cf9dd0dc"
+   ]
+  },
+  {
+   "id": "armitage_happy",
+   "char": "armitage",
+   "char_label": "Armitage",
+   "emo": "happy",
+   "text": "It worked. After everything they said, after every door they closed, it actually worked. Pour yourself a drink, Case. Tonight we celebrate.",
+   "clips": [
+    "95fb6713",
+    "8a62be71",
+    "b7375775"
+   ]
+  },
+  {
+   "id": "molly_happy",
+   "char": "molly",
+   "char_label": "Molly",
+   "emo": "happy",
+   "text": "They said yes! After all these months of waiting, they finally said yes! I can hardly hold this letter still long enough to read it again.",
+   "clips": [
+    "df49aa70",
+    "b48e94b8",
+    "9af4864c"
+   ]
+  },
+  {
+   "id": "molly_sad",
+   "char": "molly",
+   "char_label": "Molly",
+   "emo": "sad",
+   "text": "I waited at the station until the last train left. He wasn't on it. I knew he wouldn't be, and I waited anyway. That's the part I can't forgive.",
+   "clips": [
+    "5e7e1797",
+    "bd026daf",
+    "29e0165b"
+   ]
+  },
+  {
+   "id": "molly_angry",
+   "char": "molly",
+   "char_label": "Molly",
+   "emo": "angry",
+   "text": "Say that again. Go on, say it to my face this time instead of behind my back. I've had it with you, and I've had it with your excuses.",
+   "clips": [
+    "a10fb853",
+    "6b4987ff",
+    "45740187"
+   ]
+  }
+ ]
+}
