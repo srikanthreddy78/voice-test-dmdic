@@ -13,7 +13,7 @@ python3 build.py --whatsapp 91XXXXXXXXXX   # prefill the Send on WhatsApp button
 
 Writes `clips/*.m4a`, `trials.json` and `reveal.json` (public) and `key.json` (local only).
 
-After finishing, the listener sees which voice was which for their own three lines, using the neutral labels "Current Audora voice", "New voice A" and "New voice B" from `reveal.json`. Engine names appear only in `key.json` and the tally output.
+After finishing, the listener sees which model was which for their own three lines, using the labels in `reveal.json` (IndexTTS-2.5, Qwen clone + instruct, Production). The mapping is therefore public once the site is deployed.
 
 ## Test locally
 

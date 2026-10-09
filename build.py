@@ -67,8 +67,8 @@ CELLS: list[tuple[str, str, str]] = [
 
 CHAR_LABELS = {"narrator": "The Narrator", "armitage": "Armitage", "molly": "Molly"}
 
-# What the public done screen calls each arm. Engine names stay in key.json.
-PUBLIC_LABELS = {"indextts": "New voice A", "qwen_instruct": "New voice B", "production": "Current Audora voice"}
+# What the public done screen calls each arm (user chose to show model names).
+PUBLIC_LABELS = {arm: label for arm, (label, _) in ARMS.items()}
 
 
 def transcode(src: Path, dst: Path, bitrate: str) -> None:

@@ -182,7 +182,7 @@
       }).join('');
       const summary = Object.entries(fav).sort((x, y) => y[1] - x[1]).map(([k, v]) => `<b>${esc(k)}</b> ${v} of 3`).join(', ');
       box.innerHTML = `<h2 style="margin-top:28px">What you actually heard</h2>
-        <p class="mute">One of the three is the voice in use today; the other two are new candidates.</p>
+        <p class="mute">"Production" is the voice in use today; the other two are new models being evaluated.</p>
         ${cards}
         <p>Your favourite overall: ${summary}.</p>`;
     }).catch(() => {});
