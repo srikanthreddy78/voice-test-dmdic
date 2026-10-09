@@ -37,6 +37,10 @@
   .prog { height:6px; background:var(--line); border-radius:3px; overflow:hidden; margin:4px 0 12px; }
   .prog i { display:block; height:100%; background:var(--acc); transition:width .3s; }
   a.small { color:var(--mute); font-size:14px; }
+  .rv { display:flex; gap:10px; align-items:center; padding:7px 0; border-top:1px solid var(--line); font-size:15px; }
+  .rv:first-of-type { border-top:0; }
+  .rv b { width:64px; flex:none; }
+  .rv em { margin-left:auto; color:var(--acc); font-style:normal; font-size:13px; font-weight:600; text-align:right; }
 </style>
 </head>
 <body>
@@ -161,7 +165,27 @@
       <a class="btn wa" href="${wa}" target="_blank" rel="noopener">Send on WhatsApp</a>
       <button class="btn ghost" id="copy">Copy code</button>
       ${navigator.share ? '<button class="btn ghost" id="share">Share…</button>' : ''}
+      <div id="reveal"></div>
       <p style="text-align:center;margin-top:18px"><a class="small" href="#" id="again">Take it again with different lines</a></p>`;
+    fetch('reveal.json', { cache: 'no-store' }).then(r => r.json()).then(R => {
+      const box = document.getElementById('reveal'); if (!box) return;
+      const fav = {};
+      const cards = S.picks.map(p => {
+        const c = cellOf(p.cell), a = S.answers[p.cell] || {};
+        const rows = p.order.map((id, i) => {
+          const marks = [a.q1 === id ? `most ${esc(c.emo)}` : '', a.q2 === id ? 'your favourite' : ''].filter(Boolean).join(', ');
+          if (a.q2 === id) fav[R[id]] = (fav[R[id]] || 0) + 1;
+          return `<div class="rv"><b>Voice ${i + 1}</b><span>${esc(R[id] || '?')}</span>${marks ? `<em>✓ ${marks}</em>` : ''}</div>`;
+        }).join('');
+        const note = a.q1 === 'x' ? `<p class="mute" style="margin-bottom:0">You couldn't tell which sounded most ${esc(c.emo)}.</p>` : '';
+        return `<div class="card"><span class="tag">${esc(c.char_label)} · ${esc(c.emo).toUpperCase()}</span>${rows}${note}</div>`;
+      }).join('');
+      const summary = Object.entries(fav).sort((x, y) => y[1] - x[1]).map(([k, v]) => `<b>${esc(k)}</b> ${v} of 3`).join(', ');
+      box.innerHTML = `<h2 style="margin-top:28px">What you actually heard</h2>
+        <p class="mute">One of the three is the voice in use today; the other two are new candidates.</p>
+        ${cards}
+        <p>Your favourite overall: ${summary}.</p>`;
+    }).catch(() => {});
     document.getElementById('copy').onclick = async () => {
       const b = document.getElementById('copy');
       try { await navigator.clipboard.writeText(txt); b.textContent = 'Copied'; }

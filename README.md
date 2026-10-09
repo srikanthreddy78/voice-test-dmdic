@@ -11,7 +11,9 @@ python3 build.py                           # reads the renders from ../pipeline-
 python3 build.py --whatsapp 91XXXXXXXXXX   # prefill the Send on WhatsApp button with your number
 ```
 
-Writes `clips/*.m4a`, `trials.json` (public) and `key.json` (local only).
+Writes `clips/*.m4a`, `trials.json` and `reveal.json` (public) and `key.json` (local only).
+
+After finishing, the listener sees which voice was which for their own three lines, using the neutral labels "Current Audora voice", "New voice A" and "New voice B" from `reveal.json`. Engine names appear only in `key.json` and the tally output.
 
 ## Test locally
 

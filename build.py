@@ -67,6 +67,9 @@ CELLS: list[tuple[str, str, str]] = [
 
 CHAR_LABELS = {"narrator": "The Narrator", "armitage": "Armitage", "molly": "Molly"}
 
+# What the public done screen calls each arm. Engine names stay in key.json.
+PUBLIC_LABELS = {"indextts": "New voice A", "qwen_instruct": "New voice B", "production": "Current Audora voice"}
+
 
 def transcode(src: Path, dst: Path, bitrate: str) -> None:
     cmd = [
@@ -150,10 +153,12 @@ def main() -> int:
         "clips": key,
     }
     (HERE / "key.json").write_text(json.dumps(key_out, indent=1) + "\n")
+    reveal = {cid: PUBLIC_LABELS[meta["arm"]] for cid, meta in key.items()}
+    (HERE / "reveal.json").write_text(json.dumps(reveal, indent=1) + "\n")
 
     total_kb = sum(p.stat().st_size for p in clips_dir.iterdir()) // 1024
     print(f"\n{len(key)} clips, {total_kb} KB total, prefix length {plen}")
-    print("wrote trials.json (public) and key.json (LOCAL ONLY, gitignored)")
+    print("wrote trials.json + reveal.json (public) and key.json (LOCAL ONLY, gitignored)")
     return 0
 
 
